@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useGameStore } from '@/store/gameStore'
 import { WORDS, CAT_LABELS } from '@/data/words'
 
-type View = 'game' | 'leaderboard' | 'profile'
+type View = 'game' | 'leaderboard' | 'profile' | 'chat'
 
 const CATEGORIES = Object.keys(WORDS)
 
