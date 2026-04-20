@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { WORDS, CAT_LABELS } from '@/data/words'
+import { WORDS } from '@/data/words'
 
 type GameState = {
   username: string
@@ -62,7 +62,7 @@ export const useGameStore = create<GameState>()(
       generateWord: () => {
         const state = get()
         const category = state.currentCategory
-        const words = WORDS[category] || WORDS.general
+        const words = WORDS[category as keyof typeof WORDS] || WORDS.general
         
         let word = getRandomItem(words)
         if (state.usedWords.includes(word)) {
